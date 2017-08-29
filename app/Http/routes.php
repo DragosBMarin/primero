@@ -22,4 +22,17 @@ Route::get('notes', function () {
     $notes = Note::all();
 
     return view('notes', compact('notes'));
+
 });
+
+Route::get('notes/create', function () {
+
+    return '[Create notes]';
+
+});
+
+Route::get('notes/{note}/{slug?}', function ($note,$slug = null) {
+
+    dd($note, $slug);
+
+})->where('note','[0-9]+');
